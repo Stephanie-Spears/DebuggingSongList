@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace SongList
 {
-    class Program
+    internal class Program
     {
-        static List<Song> _songs = new List<Song>();
+        private static List<Song> _songs = new List<Song>();
 
         /// <summary>
         /// Application entry point
         /// </summary>
         /// <param name="args">The arguments.</param>
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             CLI.DisplayWelcome();
 
@@ -23,6 +23,7 @@ namespace SongList
                     case 1:
                         AddSong();
                         break;
+
                     case 2:
                         DisplaySongList();
                         break;
@@ -33,7 +34,7 @@ namespace SongList
         /// <summary>
         /// Displays the list of favorite songs.
         /// </summary>
-        static void DisplaySongList()
+        private static void DisplaySongList()
         {
             Console.WriteLine("Songs");
             Console.WriteLine("----------");
@@ -44,7 +45,7 @@ namespace SongList
         /// <summary>
         /// Prompts user for song name and artist and adds a new Song.
         /// </summary>
-        static void AddSong()
+        private static void AddSong()
         {
             bool done = false;
             do
@@ -54,7 +55,6 @@ namespace SongList
 
                 _songs.Add(new Song { Name = songName, Artist = artist });
                 done = CLI.Prompt("Add another song? (y/n) ").ToLower() != "y";
-
             } while (!done);
         }
     }

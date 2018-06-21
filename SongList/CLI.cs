@@ -2,10 +2,14 @@
 
 namespace SongList
 {
-    ///Represents helper methods to interact with the CLI
+    /// <summary>
+    /// Represents helper methods to interact with the CLI
+    /// </summary>
     internal class CLI
     {
+        /// <summary>
         /// Displays the welcome text.
+        /// </summary>
         internal static void DisplayWelcome()
         {
             Console.WriteLine("----------Song List----------");
