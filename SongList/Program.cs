@@ -5,7 +5,7 @@ namespace SongList
 {
     internal class Program
     {
-        private static List<Song> _songs = new List<Song>();
+        private static readonly List<Song> _songs; // = new List<Song>();
 
         /// <summary>
         /// Application entry point
@@ -38,7 +38,14 @@ namespace SongList
         {
             Console.WriteLine("Songs");
             Console.WriteLine("----------");
-            _songs.ForEach((song) => Console.WriteLine(song));
+            try
+            {
+                _songs.ForEach((song) => Console.WriteLine(song));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             Console.WriteLine();
         }
 
